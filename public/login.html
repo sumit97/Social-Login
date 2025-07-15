@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OAuth Login</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #667eea, #764ba2, #fc5c7d);
+      background-size: 300% 300%;
+      animation: gradientAnimation 12s ease infinite;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .login-box {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 100%;
+      max-width: 360px;
+      transition: transform 0.3s;
+    }
+
+    .login-box:hover {
+      transform: translateY(-4px);
+    }
+
+    .login-box h2 {
+      margin-bottom: 25px;
+      font-size: 26px;
+      color: #444;
+    }
+
+    .login-btn {
+      display: block;
+      width: 100%;
+      margin: 12px 0;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.3s;
+    }
+
+    .login-btn:hover {
+      transform: scale(1.03);
+    }
+
+    .google-btn {
+      background: linear-gradient(45deg, #4285f4, #34a853);
+      color: white;
+    }
+
+    .facebook-btn {
+      background: linear-gradient(45deg, #3b5998, #8b9dc3);
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-box">
+    <h2>Login with</h2>
+    <button class="login-btn google-btn" onclick="loginWithGoogle()">Sign in with Google</button>
+    <button class="login-btn facebook-btn" onclick="loginWithFacebook()">Sign in with Facebook</button>
+  </div>
+
+  <script>
+    function loginWithGoogle() {
+      window.location.href = "/auth/google";
+    }
+
+    function loginWithFacebook() {
+      window.location.href = "/auth/facebook";
+    }
+  </script>
+</body>
+
+</html>
